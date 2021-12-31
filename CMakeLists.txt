@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-# Set the project name to your project name, my project isn't very descriptive
 project(sandbox CXX)
 include(cmake/StandardProjectSettings.cmake)
 include(cmake/PreventInSourceBuilds.cmake)
@@ -42,5 +41,4 @@ option(ENABLE_TESTING "Enable Test Builds" ON)
 option(ENABLE_FUZZING "Enable Fuzzing Builds" OFF)
 
 set(CMAKE_CXX_FLAGS "-std=c++17")
-add_executable(sand sand.cc)
-
+add_executable(exception exception.cc)
