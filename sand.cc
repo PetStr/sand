@@ -33,27 +33,37 @@ public:
     ~B() { cout << "B d_tor: " << num << "\n"; }
 };
 
-int main()
+auto doit() -> int
 {
-    A b(10);
+ A b(10);
     try
         {
             B a;
             std::vector<int> c;
-            c.at(20) = 15;
+            //c.at(20) = 15;
             cout << "Before throw\n";
-            throw 20;
+            //throw 20;
             cout << "After throw\n";
         }
     catch (int e)
         {
             cout << "An exception occurred. Exception Nr. " << e << '\n';
+            return 50;
         }
 
     catch (std::exception& e)
         {
             cout << "An exception occurred: " << e.what() << '\n';
+            return 60;
         }
     cout << "Before exit\n";
+    return 0;
+}
+
+
+int main()
+{
+    auto a = doit();
+    cout << "a: " << a << '\n';
     return 0;
 }
