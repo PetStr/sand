@@ -1,26 +1,47 @@
 #include <iostream>
+#include <vector>
 using std::cout;
 
-class co
+class A
 {
+    int num;
+
 public:
-    co() { cout << "co c_tor\n"; }
-    ~co() { cout << "co d_tor\n"; }
+    A()
+        : num(0)
+    {
+        cout << "A c_tor: " << num << "\n";
+    }
+    A(int init)
+        : num(init)
+    {
+        cout << "A c_tor: " << num << "\n";
+    }
+    ~A() { cout << "A d_tor: " << num << "\n"; }
 };
 
-class go
+class B
 {
+    int num;
+
 public:
-    go() { cout << "go c_tor\n"; }
-    ~go() { cout << "go d_tor\n"; }
+    B()
+        : num(0)
+    {
+        cout << "B c_tor: " << num << "\n";
+    }
+    ~B() { cout << "B d_tor: " << num << "\n"; }
 };
 
 int main()
 {
-    co b;
+    A b(10);
     try
         {
-            go a;
+            B a;
+            std::vector<int> c;
+            c.at(20) = 15;
+            cout << "Before throw\n";
             throw 20;
             cout << "After throw\n";
         }
@@ -28,6 +49,11 @@ int main()
         {
             cout << "An exception occurred. Exception Nr. " << e << '\n';
         }
-    cout << "b4 exit\n";
+
+    catch (std::exception& e)
+        {
+            cout << "An exception occurred: " << e.what() << '\n';
+        }
+    cout << "Before exit\n";
     return 0;
 }

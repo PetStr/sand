@@ -1,2 +1,3 @@
-# sand
-Various sandbox tests. 
+# Petter sandbox
+Various sandbox tests, to understand the workings of C++. 
+ 
