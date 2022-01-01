@@ -3,7 +3,7 @@ Various sandbox tests, to understand the workings of C++.
 
 using cmake to setup.
 
-## Excemptions
+## Exceptions
 An example with exceptions. Just me trying the better understand what happens. 
 
 ## Variadic templates
