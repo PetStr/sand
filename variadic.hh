@@ -61,7 +61,7 @@ public:
         return value;
     }
     std::string value; // NOLINT
-} __attribute__((aligned(32)));
+};
 
 
 struct Hidden
@@ -120,7 +120,7 @@ private:
 
 /**
  * @brief Variadic template for Column.
- * Rest of the function is on print_spread_sheet. However this template
+ * Rest of the function is in variadic.cc. However this template
  * must be local the translation unit.
  *
  * Does this violate ODR?

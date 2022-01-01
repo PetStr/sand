@@ -34,7 +34,7 @@ tab::tab(std::ostream& out, const std::string& tab_name, bool froz)
 tab::~tab()
 {
     if (frozen)
-        output << "end\n";
+        output << "end (frozen)\n";
     else
         output << "end\n";
 }
