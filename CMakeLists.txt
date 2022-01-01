@@ -41,6 +41,9 @@ option(ENABLE_TESTING "Enable Test Builds" ON)
 option(ENABLE_FUZZING "Enable Fuzzing Builds" OFF)
 
 set(CMAKE_CXX_FLAGS "-std=c++17")
-add_executable(exception exception.cc)
 
-add_executable(variadic variadic.cc use_variadic.cc)
+add_subdirectory(variadic)
+
+add_subdirectory(exception)
+
+
