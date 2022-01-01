@@ -35,14 +35,14 @@ public:
 
 auto doit() -> int
 {
- A b(10);
+    A b(10);
     try
         {
             B a;
             std::vector<int> c;
-            //c.at(20) = 15;
+            // c.at(20) = 15;
             cout << "Before throw\n";
-            //throw 20;
+            // throw 20;
             cout << "After throw\n";
         }
     catch (int e)

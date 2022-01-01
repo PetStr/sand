@@ -14,7 +14,7 @@ tab::tab(std::ostream& out, const std::string& tab_name)
     , index(0)
     , span(0)
 {
-    output << "Tab name (frozen)" << tab_name << '\n'; 
+    output << "Tab name (frozen)" << tab_name << '\n';
 }
 
 tab::tab(std::ostream& out, const std::string& tab_name, bool froz)
@@ -28,7 +28,7 @@ tab::tab(std::ostream& out, const std::string& tab_name, bool froz)
     , index(0)
     , span(0)
 {
-    output << "Tab name " << tab_name << '\n'; 
+    output << "Tab name " << tab_name << '\n';
 }
 
 tab::~tab()
@@ -95,4 +95,3 @@ void tab::Column()
     got_index = false;
     got_hidden = false;
 }
-
