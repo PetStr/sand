@@ -4,6 +4,11 @@ project(sandbox CXX)
 include(cmake/StandardProjectSettings.cmake)
 include(cmake/PreventInSourceBuilds.cmake)
 
+## Adding output to root build directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 # Link this 'library' to set the c++ standard / compile-time options requested
 add_library(project_options INTERFACE)
 target_compile_features(project_options INTERFACE cxx_std_17)
@@ -40,7 +45,7 @@ option(BUILD_SHARED_LIBS "Enable compilation of shared libraries" OFF)
 option(ENABLE_TESTING "Enable Test Builds" ON)
 option(ENABLE_FUZZING "Enable Fuzzing Builds" OFF)
 
-set(CMAKE_CXX_FLAGS "-std=c++17")
+#set(CMAKE_CXX_FLAGS "-std=c++17")
 
 add_subdirectory(variadic)
 
